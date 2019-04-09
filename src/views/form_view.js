@@ -11,12 +11,12 @@ FormView.prototype.bindEvents = () => {
     const inputtedNumber = event.target.number.value;
     PubSub.publish('got-number', inputtedNumber);
   });
-  // PubSub.subscribe('been-primed', () => {
-  //   const formText = document.querySelector('#result');
-  //   console.dir(formText);
-  //   formText.value = '';
+  PubSub.subscribe('been-primed', () => {
+    const formNumber = document.querySelector('#number');
+    console.dir(formNumber);
+    formNumber.value = '';
   //
-  // });
+  });
 }
 
 module.exports = FormView;
